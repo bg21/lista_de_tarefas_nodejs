@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="tarefas">
+        <ul>
+            <% for(let i = 0; i < tarefas.length; i++) { %>
+            <li>
+                <%= tarefas[i]; %>
+            </li>
+            <% } %> 
+        </ul>
+    </div>
 </body>
 </html>

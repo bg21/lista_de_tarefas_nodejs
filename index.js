@@ -3,16 +3,17 @@ const path = require('path');
 const app = express();
 
 
-
-
-
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 app.use("/public", express.static(path.join(__dirname, 'public')));
 app.set("views", path.join(__dirname, "/views"));
 
+let tarefas = ['Arrumar o quarto -_-', 'outra coisa', 'mais outra tarefa'];
+
+
+
 app.get("/", function(req, res){
-    res.render('index.ejs');
+    res.render('index.ejs', {tarefas: tarefas});
 });
 
 
