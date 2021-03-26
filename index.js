@@ -16,6 +16,15 @@ app.get("/", function(req, res){
     res.render('index.ejs', {tarefas: tarefas});
 });
 
+app.get("/deletar/:id", function(req, res){
+    tarefas = tarefas.filter(function(val, index){
+        if(index != req.params.id){
+            return val;
+        }
+    })
+    res.render('index.ejs', {tarefas: tarefas});
+});
+
 
 
 app.listen(5000, function(){

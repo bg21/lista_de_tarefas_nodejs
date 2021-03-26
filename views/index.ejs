@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="tarefas">
+    <nav class="tarefas">
+        <h2>Lista de Tarefas</h2>
         <ul>
             <% for(let i = 0; i < tarefas.length; i++) { %>
-            <li>
+            <li> 
+                <%= i+1; %>:
                 <%= tarefas[i]; %>
+                <a href="/deletar/<%= i %>">X</a>
             </li>
             <% } %> 
         </ul>
-    </div>
+    </nav>
 </body>
 </html>
